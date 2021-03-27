@@ -4,12 +4,15 @@ from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 
+input_file_name = input('Enter the name of file to be translated:')
+output_file_name= input('Enter the name of translated target file')
+
 driver = Chrome()
 
 driver.get('https://papago.naver.com/')
 
-src_file = './subs/src.srt'
-target_file = './subs/target.srt'
+src_file = './subs/' + input_file_name
+target_file = './subs/'+ output_file_name
 
 try:
   translate_text = WebDriverWait(driver, 20).until(EC.visibility_of_element_located((By.XPATH, '/html/body/div/div/div[2]/section/div/div[1]/div[1]/div/div[3]/label/textarea')))
@@ -45,4 +48,5 @@ try:
         clear_text_btn.click()
 
 finally:
+  print('The script has finished running')
   driver.quit()

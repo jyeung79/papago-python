@@ -150,4 +150,6 @@ Thumbs.db #thumbnail cache on Windows
 
 .DS_Store
 
+/copy_of_subs
+
 # End of https://www.toptal.com/developers/gitignore/api/python
