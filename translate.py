@@ -8,7 +8,7 @@ driver = Chrome()
 
 driver.get('https://papago.naver.com/')
 
-src_file = './subs/test.srt'
+src_file = './subs/src.srt'
 target_file = './subs/target.srt'
 
 try:
@@ -27,7 +27,7 @@ try:
         translate_btn.click()
         #translated_textbox = WebDriverWait(driver, 20).until(EC.visibility_of_element_located((By.XPATH, '/html/body/div/div/div[2]/section/div/div[1]/div[2]/div/div[5]/div')))
         translated_textbox = WebDriverWait(driver, 20).until(EC.visibility_of_element_located((By.ID, 'txtTarget')))
-        driver.implicitly_wait(2)
+        driver.implicitly_wait(3)
         translated_text = translated_textbox.find_elements_by_xpath(".//*")
         
         ending_tag = False
@@ -37,7 +37,7 @@ try:
             if ending_tag == True:
               ending_tag = False
             else:
-              print(elem.tag_name + elem.text)
+              #print(elem.tag_name + elem.text)
               target.write(elem.text+'\n')
               ending_tag = True
         
