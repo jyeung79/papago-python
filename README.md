@@ -18,7 +18,7 @@
 5. Type in the name of the target file. If it doesn't exist it will be made.
    1. ex. `Knock_Knock_2_ENG.srt` file doesn't exist, it will be made.
 6. Wait for the `chrome` web driver to run.
-7. Wait until the `script` finishes
+7. Wait until the `script` finishes. Usually takes around ~20mins
 
 ## Bugs
 1. Some of the last few lines weren't saved into the target file. Need to investigate.
